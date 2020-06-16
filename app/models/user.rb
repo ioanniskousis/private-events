@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-  has_many :events, dependent: :destroy
-end
+  has_many :events, inverse_of: 'creator', dependent: :destroy
+end 

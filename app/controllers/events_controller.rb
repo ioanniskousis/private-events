@@ -18,7 +18,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @user = User.find(session[:user_id])
-    @event = @user.events.build(description: '')
+    @event = @user.events.build
   end
 
   # GET /events/1/edit

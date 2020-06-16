@@ -10,9 +10,9 @@
       </ul>
     </div>
   <% end %>
-  <%= form.text_field :description, autofocus: true %>
-  <input type="hidden" name="user_id" id="user_id" 
-    value="<%= @user.id %>" >
+  <div class="field">
+    <%= form.text_field :description, autofocus: true %>
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
