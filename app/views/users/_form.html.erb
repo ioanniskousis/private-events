@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="actions">
+    <div class="field">
+    <%= label_tag :username, "User Name" %><br />
+    <%= form.text_field :username, autofocus: true  %>
+    </div>
+
     <%= form.submit %>
   </div>
 <% end %>
