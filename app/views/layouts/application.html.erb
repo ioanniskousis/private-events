@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <% if session[:user_id] %>
+      <%= link_to "log out", session_path(0), method: :delete %>
+    <% else%>
+      <%= link_to "Sign Up", new_user_path %><br />
+    <% end %>
     <%= yield %>
   </body>
 </html>

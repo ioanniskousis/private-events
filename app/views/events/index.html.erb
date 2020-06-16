@@ -5,13 +5,19 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Description</th>
+      <th>Creator</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @events.each do |event| %>
       <tr>
+        <td><%= event.description %></td>
+        <td><%= event.username %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

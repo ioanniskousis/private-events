@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
 
     if @user
       session[:user_id] = @user.id
-      redirect_to user_path(@user) 
+      redirect_to events_path 
     else
       flash.notice = "'" + params[:username] + "' : is a Wrong User Name !!" 
 
@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-
+    session[:user_id] = nil
+    redirect_to new_session_path
   end
 end
