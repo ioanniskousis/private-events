@@ -6,8 +6,8 @@ Please login
 <%= form_with( url: sessions_path ) do |f| %>
 
   <div class="field">
-  <%= label_tag :username, "User Name to login" %><br />
-  <%= f.text_field :username, autofocus: true  %>
+  <%= label_tag :name, "User Name to login" %><br />
+  <%= f.text_field :name, autofocus: true  %>
   </div>
 
   <div class="actions">

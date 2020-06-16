@@ -5,7 +5,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.find_by_sql("SELECT events.*, users.username FROM events INNER JOIN users ON events.creator = users.id")
+    @events = Event.all
+    # find_by_sql("SELECT events.*, users.name FROM events INNER JOIN users ON events.user_id = users.id")
   end
 
   # GET /events/1
@@ -72,6 +73,7 @@ class EventsController < ApplicationController
     end
 
     def require_login
+      # session[:user_id] = nil
       if session[:user_id]
         true
       else
