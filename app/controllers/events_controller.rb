@@ -5,8 +5,10 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
-    # find_by_sql("SELECT events.*, users.name FROM events INNER JOIN users ON events.user_id = users.id")
+    # @upcoming_events = Event.upcoming_events.sort_by { |e| e.event_date }
+    # @previous_events = Event.previous_events.sort_by { |e| e.event_date }
+    @upcoming_events = Event.future_events(Time.now).sort_by { |e| e.event_date }
+    @previous_events = Event.past_events(Time.now).sort_by { |e| e.event_date }
   end
 
   # GET /events/1

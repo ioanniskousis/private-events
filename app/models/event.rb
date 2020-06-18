@@ -4,4 +4,15 @@ class Event < ApplicationRecord
 
   validates :description, presence: true
   validates :location, presence: true
+
+  def self.upcoming_events
+    self.all.filter { |e| e.event_date > Time.now }
+  end
+
+  def self.previous_events
+    self.all.filter { |e| e.event_date < Time.now }
+  end
+
+  scope :future_events, ->(date) { where("event_date > ?", date) }
+  scope :past_events, ->(date) { where("event_date < ?", date) }
 end
