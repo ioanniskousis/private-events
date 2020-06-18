@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 <p><%= @event.description %></p>
+<p><%= @event.creator.name %></p>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %> |
 <%= link_to 'destroy', event_path(@event.id), method: :delete, data: { confirm: 'Are you sure?' } %>
