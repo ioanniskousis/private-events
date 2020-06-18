@@ -27,8 +27,26 @@
   <p class="brown"><%= @user.name %> has not created any events</p>
 <% end  %>
 
-
-<br/>
+<table>
+<thead>
+  <tr>
+    <th class="w300">Attended Events</th>
+    <th class="w200">Date</th>
+    <th class="w200">Location</th>
+    <th class="w200">Creator</th>
+  </tr>
+</thead>
+<tbody>
+<% @user.attended_events.each do |e| %>
+  <tr>
+  <td><%= link_to e.description, event_path(e) %></td>
+  <td><%= e.event_date.strftime("%A %B %d, %Y") %></td>
+  <td><%= e.location %></td>
+  <td><%= e.creator.name %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
 
 <% if @user.id == session[:user_id] %>
   <%= link_to 'Edit', edit_user_path(@user) %> |

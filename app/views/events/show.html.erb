@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 <p><%= @event.description %></p>
 <p><%= @event.creator.name %></p>
+<hr>
+<h2>Attendees</h2>
+<% if @event.attendees.count.zero? %>
+  <p>There are not attendees registered for <%= "'" + @event.description + "'" %></p>
+<% end %>
+<% @event.attendees.each do |user| %>
+  <p><%= user.name %></p>
+<% end %>
+
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %> |
