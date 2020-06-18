@@ -19,6 +19,7 @@ class EventsController < ApplicationController
   def new
     @user = User.find(session[:user_id])
     @event = @user.events.build
+    @event.event_date = Time.now
   end
 
   # GET /events/1/edit
@@ -33,12 +34,10 @@ class EventsController < ApplicationController
     @user = User.find(session[:user_id])
     @event = @user.events.build(event_params)
 
-    respond_to do |format|
-      if @event.save
-        format.html { redirect_to events_path, notice: 'Event was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @event.save
+      redirect_to events_path, notice: 'Event was successfully created.'
+    else
+      render :new
     end
   end
 
@@ -69,7 +68,7 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:description)
+      params.require(:event).permit(:description, :location, :event_date)
     end
 
     def require_login

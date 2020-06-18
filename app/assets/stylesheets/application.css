@@ -13,3 +13,182 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+  margin: 0;
+  padding: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eee;
+  max-width: 900px;
+  margin: auto;
+}
+
+form,
+h1 {
+  clear: both;
+}
+
+div {
+  margin: 0;
+}
+
+.d100 {
+  width: 100%;
+  /* background-color: violet; */
+  box-sizing: border-box;
+  clear: both;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+.menu-button {
+  display: inline-block;
+  border: none;
+  background-color: rgb(139, 139, 184);
+  /* border-radius: 4px; */
+  text-decoration: none;
+  color: white;
+  padding: 12px;
+  width: 120px;
+  text-align: center;
+  font-size: large;
+}
+
+.menu-bar {
+  /* background-color: gray; */
+  padding: 4px 0;
+}
+
+a.menu-button:visited {
+  color: white;
+}
+
+a.menu-button:hover {
+  background-color: rgb(70, 70, 170);
+}
+
+.float-right {
+  float: right;
+  margin-left: 8px;
+}
+
+.user-strip {
+  display: block;
+  background-color: rgb(3, 3, 83);
+  color: white;
+  padding: 12px 20px;
+  font-size: x-large;
+  margin: 10px 0;
+}
+
+.margin-left {
+  margin-left: 30px;
+}
+
+.gray {
+  color: #bbb;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 4px 10px;
+  border: 1px solid #555;
+}
+
+.w200 {
+  width: 200px;
+}
+
+.w300 {
+  width: 300px;
+}
+
+.brown {
+  color: brown;
+}
+
+.blue {
+  color: blue;
+}
+
+.invite {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+a:visited {
+  color: -moz-hyperlinktext;
+}
+
+.center {
+  text-align: center;
+}
+
+td.td-link {
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid #aaa;
+}
+
+th.list-header {
+  padding: 10px;
+  background-color: rgb(70, 70, 170);
+  color: white;
+  text-align: center;
+}
+
+a.tb-link {
+  display: block;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: black;
+  font-size: large;
+  /* background-color: gray; */
+}
+
+a.tb-link:hover {
+  background-color: rgb(70, 70, 170);
+  color: white;
+}
+
+label {
+  font-size: medium;
+  margin: 10px 0;
+}
+
+input[type="text"],
+input[type="date"] {
+  font-size: medium;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+
+}
+
+input[type="submit"] {
+  display: inline-block;
+  border: none;
+  background-color: rgb(139, 139, 184);
+  /* border-radius: 4px; */
+  text-decoration: none;
+  color: white;
+  padding: 12px;
+  width: 120px;
+  text-align: center;
+  font-size: large;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(70, 70, 170);
+}

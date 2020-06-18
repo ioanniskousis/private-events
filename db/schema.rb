@@ -13,15 +13,18 @@
 ActiveRecord::Schema.define(version: 2020_06_16_095822) do
 
   create_table "events", force: :cascade do |t|
-    t.text "description"
+    t.text "description", null: false
+    t.datetime "event_date", null: false
+    t.string "location", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_date"], name: "index_events_on_event_date"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

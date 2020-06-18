@@ -5,22 +5,23 @@
 <table>
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Creator</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th class="w300">Description</th>
+      <th class="w300">Date</th>
+      <th class="w300">Location</th>
+      <th class="w200">Creator</th>
     </tr>
   </thead>
 
   <tbody>
+    <% if @events.count.zero? %>
+      <td colspan="4">There are no events recorded</td>
+    <% end %>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.description %></td>
-        <td><%= event.creator.name %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="td-link"><%= link_to event.description, event_path(event.id), class: "tb-link"  %></td>
+        <td class="td-link"><%= event.event_date.strftime("%A %B %d, %Y") %></td>
+        <td class="td-link"><%= event.location  %></td>
+        <td class="td-link"><%= link_to event.creator.name, user_path(event.creator.id), class: "tb-link"  %></td>
       </tr>
     <% end %>
   </tbody>
