@@ -1,21 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
-
-<table>
+<div class="user-strip">Users</div>
+<table class="w_100">
   <thead>
     <tr>
-      <th colspan="4">Select User</th>
+      <th class="list-header">User Name</th>
+      <th class="list-header">Events Created</th>
+      <th class="list-header">Events To Attend</th>
+      <th class="list-header">Events Attended</th>
     </tr>
   </thead>
 
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="td-link w_55"><%= link_to user.name, user_path(user.id), class: "tb-link" %></td>
+        <td class="td-link-inactive w_15"><%= user.events.count %></td>
+        <td class="td-link-inactive w_15"><%= user.upcoming_events.count %></td>
+        <td class="td-link-inactive w_15"><%= user.previous_events.count %></td>
       </tr>
     <% end %>
   </tbody>

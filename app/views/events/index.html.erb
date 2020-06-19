@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Upcoming Events</h1>
-<table>
+<div class="user-strip">Upcoming Events</div>
+<table class="w_100 margin-bottom-20">
   <thead>
     <tr>
-      <th class="w300">Description</th>
-      <th class="w300">Date</th>
-      <th class="w300">Location</th>
-      <th class="w200">Creator</th>
-      <th class="w200">Attendees</th>
+      <th class="w300 list-header">Description</th>
+      <th class="w300 list-header">Date</th>
+      <th class="w300 list-header">Location</th>
+      <th class="w200 list-header">Creator</th>
+      <th class="w100 list-header">Attendees</th>
     </tr>
   </thead>
 
@@ -19,8 +19,8 @@
     <% @upcoming_events.each do |event| %>
       <tr>
         <td class="td-link"><%= link_to event.description, event_path(event.id), class: "tb-link"  %></td>
-        <td class="td-link"><%= event.event_date.strftime("%A %B %d, %Y") %></td>
-        <td class="td-link"><%= event.location  %></td>
+        <td class="td-link-inactive"><%= event.event_date.strftime("%A %B %d, %Y") %></td>
+        <td class="td-link-inactive"><%= event.location  %></td>
         <td class="td-link"><%= link_to event.creator.name, user_path(event.creator.id), class: "tb-link"  %></td>
         <td class="td-link"><%= link_to event.attendees.count, event_path(event.id), class: "tb-link"  %></td>
       </tr>
@@ -28,15 +28,15 @@
   </tbody>
 </table>
 
-<h1>Past Events</h1>
-<table>
+<div class="user-strip">Past Events</div>
+<table class="w_100 margin-bottom-20">
   <thead>
     <tr>
-      <th class="w300">Description</th>
-      <th class="w300">Date</th>
-      <th class="w300">Location</th>
-      <th class="w200">Creator</th>
-      <th class="w200">Attendees</th>
+      <th class="w300 list-header">Description</th>
+      <th class="w300 list-header">Date</th>
+      <th class="w300 list-header">Location</th>
+      <th class="w200 list-header">Creator</th>
+      <th class="w100 list-header">Attendees</th>
     </tr>
   </thead>
 
@@ -47,8 +47,8 @@
     <% @previous_events.each do |event| %>
       <tr>
         <td class="td-link"><%= link_to event.description, event_path(event.id), class: "tb-link"  %></td>
-        <td class="td-link"><%= event.event_date.strftime("%A %B %d, %Y") %></td>
-        <td class="td-link"><%= event.location  %></td>
+        <td class="td-link-inactive"><%= event.event_date.strftime("%A %B %d, %Y") %></td>
+        <td class="td-link-inactive"><%= event.location  %></td>
         <td class="td-link"><%= link_to event.creator.name, user_path(event.creator.id), class: "tb-link"  %></td>
         <td class="td-link"><%= link_to event.attendees.count, event_path(event.id), class: "tb-link"  %></td>
       </tr>
@@ -56,6 +56,4 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'New Event', new_event_path, class: "menu-button w200" %>
