@@ -1,22 +1,26 @@
 <p class="red" id="notice"><%= notice %></p>
 
 <div class="user-strip">
-  <%= @event.description %>
-  <%= link_to @register_label, events_users_path({:event_id => @event.id, :user_id => session[:user_id] }), method: "POST", class: "sub-menu-button float-right " + @button_class %>
+  <span class="top-label"><%= @event.description %></span>
+  <%= link_to @register_label, events_users_path({:event_id => @event.id, :user_id => session[:user_id] }), method: "POST", class: "menu-button float-right " + @button_class %>
 </div>
 
 <div class="user-strip">
-  <%= "Creator : " + @event.creator.name %>
-  <% if @event.creator.id == session[:user_id] %>
-    <!--<%= link_to "Invite attendees", events_user_path, class: "sub-menu-button float-right w200" %>-->
-    <%= link_to 'Edit', edit_event_path(@event), class: "sub-menu-button float-right" %>
-    <%= link_to 'Destroy', event_path(@event.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "sub-menu-button float-right" %>
+  <span class="top-label"><%= "Creator : " + @event.creator.name %></span>
+  <% if @is_private %>
+    <%= link_to 'Edit', edit_event_path(@event), class: "menu-button float-right" %>
+    <%= link_to 'Destroy', event_path(@event.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "menu-button float-right" %>
   <% end %>
-  <%= link_to 'Back', :back, class: "sub-menu-button float-right" %>
+</div>
+<div class="user-strip">
+  <span class="top-label"><%= "Location : " + @event.location %></span>
+</div>
+<div class="user-strip">
+  <span class="top-label"><%= "Date : " + @event.event_date.strftime("%A %B %d, %Y") %></span>
 </div>
 
 <table class="w_100 margin-bottom-20">
-  <% if @event.creator.id == session[:user_id] %>
+  <% if @is_private %>
     <th class="list-header" colspan="2">
   <% else %>
     <th class="list-header">
@@ -29,7 +33,7 @@
         <td class="td-link">
           <%= link_to user.name, user_path(user.id), class: "tb-link" %>
         </td>
-        <% if @event.creator.id == session[:user_id] %>
+        <% if @is_private %>
           <td class="td-link w100">
             <%= link_to "Remove", events_users_path({event_id: @event.id, user_id: user.id}), method: "POST" , class: "tb-link" %>
           </td>
@@ -42,25 +46,26 @@
   <p class="red"> There are no attendees for this event </p>
 <% end %>
 
-<table class="w_100">
-  <th class="list-header" colspan="2">
-  Select Attendees
-  </th>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <% unless @event.attendees.include?(user) %>
-          <td class="td-link">
-            <%= link_to user.name, user_path(user.id), class: "tb-link" %>
-          </td>
-          <% if @event.creator.id == session[:user_id] %>
-          <td class="td-link w100">
-            <%= link_to "Invite", events_users_path({event_id: @event.id, user_id: user.id}), method: "POST" , class: "tb-link" %>
-          </td>
+<% if @is_private %>
+  <table class="w_100">
+    <th class="list-header" colspan="2">
+    Select Attendees
+    </th>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <% unless @event.attendees.include?(user) %>
+            <td class="td-link">
+              <%= link_to user.name, user_path(user.id), class: "tb-link" %>
+            </td>
+            <% if @is_private %>
+            <td class="td-link w100">
+              <%= link_to "Invite", events_users_path({event_id: @event.id, user_id: user.id}), method: "POST" , class: "tb-link" %>
+            </td>
+            <% end %>
           <% end %>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

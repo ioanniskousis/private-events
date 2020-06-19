@@ -90,12 +90,17 @@ a.menu-button:visited {
 }
 
 .user-strip {
+  box-sizing: border-box;
   display: block;
   background-color: rgb(3, 3, 83);
   color: white;
-  padding: 12px 20px;
-  font-size: x-large;
   margin: 10px 0;
+}
+
+.top-label {
+  display: inline-block;
+  margin: 9px 20px;
+  font-size: x-large;
 }
 
 .center-div {
