@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     set_user
+    
     @created_events = @user.events.sort_by { |e| e.event_date}
     @upcoming_events = @user.upcoming_events.sort_by { |e| e.event_date }
     @previous_events = @user.previous_events.sort_by { |e| e.event_date }
@@ -19,10 +20,12 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @name_label = "New User Name"
   end
 
   # GET /users/1/edit
   def edit
+    @name_label = "Update User Name"
   end
 
   # POST /users

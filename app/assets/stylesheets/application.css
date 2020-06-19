@@ -57,6 +57,19 @@ h1 {
   font-size: large;
 }
 
+.sub-menu-button {
+  display: inline-block;
+  border: none;
+  background-color: rgb(139, 139, 184);
+  /* border-radius: 4px; */
+  text-decoration: none;
+  color: white;
+  padding: 4px;
+  width: 120px;
+  text-align: center;
+  font-size: large;
+}
+
 .menu-bar {
   /* background-color: gray; */
   padding: 4px 0;
@@ -66,7 +79,8 @@ a.menu-button:visited {
   color: white;
 }
 
-a.menu-button:hover {
+.menu-button:hover,
+.sub-menu-button:hover {
   background-color: rgb(70, 70, 170);
 }
 
@@ -82,6 +96,21 @@ a.menu-button:hover {
   padding: 12px 20px;
   font-size: x-large;
   margin: 10px 0;
+}
+
+.center-div {
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 100px;
+  background-color: #ddd;
+  padding: 60px;
+  border-radius: 6px;
+}
+
+.center-div label {
+  margin: 20px 0;
+  font-size: large;
 }
 
 .margin-left {
@@ -101,6 +130,7 @@ td {
 
 .w100 {
   width: 100px;
+  max-width: 100px;
 }
 
 .w200 {
@@ -198,7 +228,7 @@ input[type="submit"] {
   font-size: large;
   cursor: pointer;
 }
-
+ 
 input[type="submit"]:hover {
   background-color: rgb(70, 70, 170);
 }
@@ -217,4 +247,20 @@ input[type="submit"]:hover {
 
 .margin-bottom-20 {
   margin-bottom: 20px;
+}
+
+.center-div input {
+  margin: 10px 0;
+  font-size: large;
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+}
+
+.bg_green {
+  background-color: rgb(90, 121, 90);
+}
+
+.bg_red {
+  background-color: rgb(146, 92, 92);
 }

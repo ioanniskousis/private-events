@@ -1,20 +1,45 @@
-<p id="notice"><%= notice %></p>
-<p><%= @event.description %></p>
-<p><%= @event.creator.name %></p>
-<% if @event.creator.id == session[:user_id] %>
-  <%= link_to "Invite attendees", events_user_path %>
-<% end %>
-<hr>
-<h2>Attendees</h2>
+<p class="red" id="notice"><%= notice %></p>
+<div class="user-strip">
+  <%= @event.description %>
+  <%= link_to @register_label, events_users_path({:event_id => @event.id, :user_id => session[:user_id] }), method: "POST", class: "sub-menu-button float-right " + @button_class %>
+</div>
+
+<div class="user-strip">
+  <%= "Creator : " + @event.creator.name %>
+  <% if @event.creator.id == session[:user_id] %>
+    <%= link_to "Invite attendees", events_user_path, class: "sub-menu-button float-right w200" %>
+  <% end %>
+  <%= link_to 'Edit', edit_event_path(@event), class: "sub-menu-button float-right" %>
+  <%= link_to 'Back', events_path, class: "sub-menu-button float-right" %>
+  <%= link_to 'Destroy', event_path(@event.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "sub-menu-button float-right" %>
+
+</div>
+
+<table class="w_100">
+  <% if @event.creator.id == session[:user_id] %>
+    <th class="list-header" colspan="2">
+  <% else %>
+    <th class="list-header">
+  <% end %>
+  Attendees
+  </th>
+  <tbody>
+    <% @event.attendees.each do |user| %>
+      <tr>
+        <td class="td-link w_100">
+          <%= link_to user.name, user_path(user.id), class: "tb-link" %>
+        </td>
+        <% if @event.creator.id == session[:user_id] %>
+          <td class="td-link w100">
+            <%= link_to "Remove", events_users_path({event_id: @event.id, user_id: user.id}), method: "POST" , class: "tb-link" %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <% if @event.attendees.count.zero? %>
   <p>There are not attendees registered for <%= "'" + @event.description + "'" %></p>
 <% end %>
-<% @event.attendees.each do |user| %>
-  <p><%= user.name %></p>
-<% end %>
 
-
-<%= link_to @register_label, events_users_path({:event_id => @event.id, :user_id => session[:user_id] }), method: "POST" %>
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %> |
-<%= link_to 'destroy', event_path(@event.id), method: :delete, data: { confirm: 'Are you sure?' } %>
