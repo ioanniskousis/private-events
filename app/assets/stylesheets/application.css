@@ -308,7 +308,7 @@ a.rm-link:hover {
   width: 100%;
   text-align: center;
   color: #eee;
-  animation: flashy 4s linear;
+  animation: flashy 2s ease;
 }
 
 @keyframes flashy {
