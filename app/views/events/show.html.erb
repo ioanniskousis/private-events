@@ -1,9 +1,5 @@
 <p class="red" id="notice"><%= notice %></p>
 
-<% if @event.attendees.count.zero? %>
-  <p>There are not attendees registered for <%= "'" + @event.description + "'" %></p>
-<% end %>
-
 <div class="user-strip">
   <%= @event.description %>
   <%= link_to @register_label, events_users_path({:event_id => @event.id, :user_id => session[:user_id] }), method: "POST", class: "sub-menu-button float-right " + @button_class %>
@@ -30,7 +26,7 @@
   <tbody>
     <% @event.attendees.each do |user| %>
       <tr>
-        <td class="td-link w_100">
+        <td class="td-link">
           <%= link_to user.name, user_path(user.id), class: "tb-link" %>
         </td>
         <% if @event.creator.id == session[:user_id] %>
@@ -42,6 +38,9 @@
     <% end %>
   </tbody>
 </table>
+<% if @event.attendees.count.zero? %>
+  <p class="red"> There are no attendees for this event </p>
+<% end %>
 
 <table class="w_100">
   <th class="list-header" colspan="2">
@@ -51,7 +50,7 @@
     <% @users.each do |user| %>
       <tr>
         <% unless @event.attendees.include?(user) %>
-          <td class="td-link w_100">
+          <td class="td-link">
             <%= link_to user.name, user_path(user.id), class: "tb-link" %>
           </td>
           <% if @event.creator.id == session[:user_id] %>

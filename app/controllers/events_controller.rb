@@ -40,6 +40,7 @@ class EventsController < ApplicationController
     @event = @user.events.build(event_params)
 
     if @event.save
+      @event.attendees.push(@user)
       redirect_to events_path, notice: 'Event was successfully created.'
     else
       render :new
@@ -51,7 +52,7 @@ class EventsController < ApplicationController
   def update
     set_event
     if @event.update(event_params)
-      redirect_to events_path, notice: 'Event was successfully updated.'
+      redirect_to event_path(@event.id), notice: 'Event was successfully updated.'
     else
       render :edit
     end
