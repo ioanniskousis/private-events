@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @users = User.all
     @event = Event.find(params[:id])
     @register_label = User.find(session[:user_id]).attended_events.include?(@event) ? "Unregister From The Event" : "Join The Event"
     @button_class = User.find(session[:user_id]).attended_events.include?(@event) ? "bg_red w300" : "bg_green w200"
