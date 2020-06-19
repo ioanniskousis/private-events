@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to events_path 
     else
-      flash.notice = "'" + params[:name] + "' : is a Wrong User Name !!" 
+      flash.alert = "'" + params[:name] + "' : is a Wrong User Name !!" 
 
       redirect_to new_session_path
     end

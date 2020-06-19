@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   # before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :require_login
+  before_action :require_login, except: [:index]
 
   # GET /events
   # GET /events.json
@@ -79,7 +79,7 @@ class EventsController < ApplicationController
     end
 
     def require_login
-      # session[:user_id] = nil
+      #session[:user_id] = nil
       if session[:user_id]
         true
       else

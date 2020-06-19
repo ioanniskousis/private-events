@@ -14,11 +14,18 @@
  *= require_self
  */
 
- body {
-  margin: 0;
-  padding: 10px;
+ body,
+ html {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #eee;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 0;
+  padding: 10px;
   max-width: 1100px;
   margin: auto;
 }
@@ -264,10 +271,12 @@ input[type="submit"]:hover {
 
 .bg_green {
   background-color: rgb(90, 121, 90);
+  /* background-color: #3CB371; */
 }
 
 .bg_red {
-  background-color: rgb(146, 92, 92);
+  /* background-color: rgb(146, 92, 92); */
+  background-color: #ff1a4d;
 }
 
 .p-10 {
@@ -284,10 +293,34 @@ a.rm-link {
   text-decoration: none;
   color: black;
   font-size: large;
-  /* background-color: gray; */
 }
 
 a.rm-link:hover {
-  background-color: rgb(146, 92, 92);
+  background-color: #ff1a4d;
   color: white;
+}
+
+.flash {
+  margin: 0;
+  padding: 5px;
+  position: relative;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  color: #eee;
+  animation: flashy 4s linear;
+}
+
+@keyframes flashy {
+  50% {
+    opacity: 0;
+  }
+}
+
+.notice {
+  background-color: #3CB371;
+}
+
+.alert {
+  background-color: #ff1a4d;
 }
