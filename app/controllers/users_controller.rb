@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, except: [:new, :create]
 
   # GET /users
   # GET /users.json
@@ -59,10 +60,8 @@ class UsersController < ApplicationController
   # DELETE /users/1.json
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    session[:user_id] = nil
+    redirect_to new_session_path, notice: "User was successfully destroyed."
   end
 
   private
@@ -74,5 +73,15 @@ class UsersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def user_params
       params.require(:user).permit(:name)
+    end
+
+    def require_login
+    # session[:user_id] = nil
+      if session[:user_id]
+        true
+      else
+        redirect_to new_session_path
+        false
+      end
     end
 end

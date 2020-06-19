@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<div class="user-strip">Upcoming Events</div>
+<div class="user-strip">
+  Upcoming Events
+  <%= link_to 'New Event', new_event_path, class: "sub-menu-button w200 float-right" %>
+</div>
 <table class="w_100 margin-bottom-20">
   <thead>
     <tr>
@@ -55,5 +58,3 @@
     <% end %> 
   </tbody>
 </table>
-
-<%= link_to 'New Event', new_event_path, class: "menu-button w200" %>
