@@ -1,7 +1,7 @@
 <p class="red" id="notice"><%= notice %></p>
 
 <div class="user-strip">
-  <span class="top-label"><%= @event.description %></span>
+  <span class="top-label"><%= @event.description.capitalize %></span>
   <%= link_to @register_label, events_users_path({:event_id => @event.id, :user_id => session[:user_id] }), method: "POST", class: "menu-button float-right " + @button_class %>
 </div>
 
@@ -28,23 +28,25 @@
   Attendees
   </th>
   <tbody>
-    <% @event.attendees.each do |user| %>
-      <tr>
-        <td class="td-link">
-          <%= link_to user.name, user_path(user.id), class: "tb-link" %>
-        </td>
-        <% if @is_private %>
-          <td class="td-link w100">
-            <%= link_to "Remove", events_users_path({event_id: @event.id, user_id: user.id}), method: "POST" , class: "tb-link" %>
+    <% if @event.attendees.count.zero? %>
+      <tr colspan="2"><td class="red p-10"> There are no attendees for this event </td></tr>
+    <% else %>
+      <% @event.attendees.each do |user| %>
+        <tr>
+          <td class="td-link">
+            <%= link_to user.name, user_path(user.id), class: "tb-link" %>
           </td>
-        <% end %>
-      </tr>
+          <% if @is_private %>
+            <td class="td-link w100">
+              <%= link_to "Remove", events_users_path({event_id: @event.id, user_id: user.id}), method: "POST" , class: "rm-link" %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
-<% if @event.attendees.count.zero? %>
-  <p class="red"> There are no attendees for this event </p>
-<% end %>
+
 
 <% if @is_private %>
   <table class="w_100">

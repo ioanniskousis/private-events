@@ -269,3 +269,25 @@ input[type="submit"]:hover {
 .bg_red {
   background-color: rgb(146, 92, 92);
 }
+
+.p-10 {
+  padding: 10px;
+  text-align: center;
+}
+
+a.rm-link {
+  display: block;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: black;
+  font-size: large;
+  /* background-color: gray; */
+}
+
+a.rm-link:hover {
+  background-color: rgb(146, 92, 92);
+  color: white;
+}
