@@ -1,0 +1,6 @@
+<h1>Select attendees for <%= @event.description %></h1>
+<ul>
+<% @users.each do |user| %>
+  <li><%= link_to user.name, events_users_path({:event_id => @event.id, :user_id => user.id }), method: "POST" %></li>
+<% end %>
+</ul>

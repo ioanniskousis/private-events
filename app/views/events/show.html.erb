@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 <p><%= @event.description %></p>
 <p><%= @event.creator.name %></p>
+<% if @event.creator.id == session[:user_id] %>
+  <%= link_to "Invite attendees", events_user_path %>
+<% end %>
 <hr>
 <h2>Attendees</h2>
 <% if @event.attendees.count.zero? %>
@@ -11,6 +14,7 @@
 <% end %>
 
 
+<%= link_to @register_label, events_users_path({:event_id => @event.id, :user_id => session[:user_id] }), method: "POST" %>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %> |
 <%= link_to 'destroy', event_path(@event.id), method: :delete, data: { confirm: 'Are you sure?' } %>
