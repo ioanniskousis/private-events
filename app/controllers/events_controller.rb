@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @is_private = session[:user_id] == @event.creator.id
     @register_label = User.find(session[:user_id]).attended_events.include?(@event) ? "Unregister From The Event" : "Join The Event"
-    @button_class = User.find(session[:user_id]).attended_events.include?(@event) ? "bg_red w300" : "bg_green w200"
+    @button_class = User.find(session[:user_id]).attended_events.include?(@event) ? "bg_red w272" : "bg_green w272"
   end
 
   # GET /events/new

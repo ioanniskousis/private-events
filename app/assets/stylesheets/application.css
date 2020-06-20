@@ -153,6 +153,10 @@ td {
   width: 300px;
 }
 
+.w272 {
+  width: 272px;
+}
+
 .brown {
   color: brown;
 }
@@ -271,12 +275,18 @@ input[type="submit"]:hover {
 
 .bg_green {
   background-color: rgb(90, 121, 90);
-  /* background-color: #3CB371; */
+}
+
+.bg_green:hover {
+  background-color: rgb(111, 170, 111);
 }
 
 .bg_red {
-  /* background-color: rgb(146, 92, 92); */
   background-color: #ff1a4d;
+}
+
+.bg_red:hover {
+  background-color: #d35c76;
 }
 
 .p-10 {
@@ -323,4 +333,8 @@ a.rm-link:hover {
 
 .alert {
   background-color: #ff1a4d;
+}
+
+* {
+  border-radius: 4px;
 }
