@@ -1,7 +1,7 @@
 <!-- <p class="red" id="notice"><%= notice %></p> -->
 
 <div class="user-strip">
-  <span class="top-label"><%= @event.description.capitalize %></span>
+  <span class="top-label event"><%= @event.description.capitalize %></span>
   <%= link_to @register_label, events_users_path({:event_id => @event.id, :user_id => session[:user_id] }), method: "POST", class: "menu-button float-right " + @button_class %>
 </div>
 

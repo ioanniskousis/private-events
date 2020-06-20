@@ -338,3 +338,8 @@ a.rm-link:hover {
 * {
   border-radius: 4px;
 }
+
+.event {
+  color: rgb(198, 153, 204);
+  font-weight: bold;
+}
