@@ -25,7 +25,6 @@ div {
 
 .d100 {
   width: 100%;
-  /* background-color: violet; */
   box-sizing: border-box;
   clear: both;
 }
@@ -39,7 +38,6 @@ h1 {
   display: inline-block;
   border: none;
   background-color: rgb(139, 139, 184);
-  /* border-radius: 4px; */
   text-decoration: none;
   color: white;
   padding: 12px;
@@ -52,7 +50,6 @@ h1 {
   display: inline-block;
   border: none;
   background-color: rgb(139, 139, 184);
-  /* border-radius: 4px; */
   text-decoration: none;
   color: white;
   padding: 4px;
@@ -62,7 +59,6 @@ h1 {
 }
 
 .menu-bar {
-  /* background-color: gray; */
   padding: 4px 0;
 }
 
@@ -193,7 +189,6 @@ a.tb-link {
   text-decoration: none;
   color: black;
   font-size: large;
-  /* background-color: gray; */
 }
 
 a.tb-link:hover {
@@ -219,7 +214,6 @@ input[type="submit"] {
   display: inline-block;
   border: none;
   background-color: rgb(139, 139, 184);
-  /* border-radius: 4px; */
   text-decoration: none;
   color: white;
   padding: 12px;
@@ -321,4 +315,9 @@ a.rm-link:hover {
 
 * {
   border-radius: 4px;
+}
+
+.event {
+  color: rgb(198, 153, 204);
+  font-weight: bold;
 }
