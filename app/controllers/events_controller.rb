@@ -7,8 +7,8 @@ class EventsController < ApplicationController
   def index
     # @upcoming_events = Event.upcoming_events.sort_by { |e| e.event_date }
     # @previous_events = Event.previous_events.sort_by { |e| e.event_date }
-    @upcoming_events = Event.future_events(Time.now).sort_by { |e| e.event_date }
-    @previous_events = Event.past_events(Time.now).sort_by { |e| e.event_date }
+    @upcoming_events = Event.future_events(Time.now).sort_by(&:event_date)
+    @previous_events = Event.past_events(Time.now).sort_by(&:event_date)
   end
 
   # GET /events/1
@@ -17,8 +17,10 @@ class EventsController < ApplicationController
     @users = User.all
     @event = Event.find(params[:id])
     @is_private = session[:user_id] == @event.creator.id
-    @register_label = User.find(session[:user_id]).attended_events.include?(@event) ? "Unregister From The Event" : "Join The Event"
-    @button_class = User.find(session[:user_id]).attended_events.include?(@event) ? "bg_red w272" : "bg_green w272"
+    mgs1 = 'Unregister From The Event'
+    msg2 = 'Join The Event'
+    @register_label = User.find(session[:user_id]).attended_events.include?(@event) ? mgs1 : msg2
+    @button_class = User.find(session[:user_id]).attended_events.include?(@event) ? 'bg_red w272' : 'bg_green w272'
   end
 
   # GET /events/new
@@ -68,23 +70,24 @@ class EventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def event_params
-      params.require(:event).permit(:description, :location, :event_date)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
-    def require_login
-      #session[:user_id] = nil
-      if session[:user_id]
-        true
-      else
-        redirect_to new_session_path
-        false
-      end
+  # Only allow a list of trusted parameters through.
+  def event_params
+    params.require(:event).permit(:description, :location, :event_date)
+  end
+
+  def require_login
+    # session[:user_id] = nil
+    if session[:user_id]
+      true
+    else
+      redirect_to new_session_path
+      false
     end
+  end
 end

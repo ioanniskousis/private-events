@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   if Rails.env.test?
 
     def self.cash_session_user_id_for_testing(user_id)
@@ -10,5 +9,4 @@ class ApplicationController < ActionController::Base
       @session_user_id
     end
   end
-  
 end
