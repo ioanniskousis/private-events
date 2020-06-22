@@ -28,7 +28,7 @@
     <img src="app/assets/images/microverse.png" alt="Microverse Logo" width="80" height="80">
   </a>
   
-  <h3 align="center">Members Only Application</h3>
+  <h3 align="center">Private Events Application</h3>
   
   <p align="center">
     This project is part of the Microverse curriculum in Ruby On Rails course!
