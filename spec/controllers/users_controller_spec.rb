@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :feature do
+RSpec.describe 'Users Controller', type: :feature do
   before :each do
     User.create(name: 'Patric')
     visit '/sessions/new'

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Session Control', type: :feature do
+RSpec.describe 'Session Controller', type: :feature do
   before :each do
     User.create(name: 'Patric')
   end

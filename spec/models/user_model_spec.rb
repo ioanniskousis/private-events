@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
+RSpec.describe 'Usern Model', type: :model do
   before :each do
     User.create(name: 'User 2')
     User.create(name: 'User 1')

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Events', type: :feature do
+RSpec.describe 'Events Controller', type: :feature do
   before :each do
     User.create(name: 'Patric')
     Event.create(description: 'Olympic Games Show', location: 'FIFA Stadium', event_date: '2021-06-15', user_id: 1)

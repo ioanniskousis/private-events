@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Event, type: :model do
+RSpec.describe 'Event Model', type: :model do
   before :each do
     User.create(name: 'Paul')
     User.create(name: 'Sum')
