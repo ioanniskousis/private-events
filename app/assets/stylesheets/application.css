@@ -1,5 +1,5 @@
 body,
- html {
+html {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #eee;
   margin: 0;
@@ -8,7 +8,6 @@ body,
 }
 
 .container {
-  margin: 0;
   padding: 10px;
   max-width: 1100px;
   margin: auto;
@@ -98,6 +97,11 @@ a.menu-button:visited {
   background-color: #ddd;
   padding: 60px;
   border-radius: 6px;
+}
+
+label {
+  font-size: medium;
+  margin: 10px 0;
 }
 
 .center-div label {
@@ -196,18 +200,12 @@ a.tb-link:hover {
   color: white;
 }
 
-label {
-  font-size: medium;
-  margin: 10px 0;
-}
-
 input[type="text"],
 input[type="date"] {
   font-size: medium;
   padding: 10px;
   margin: 10px 0;
   border: none;
-
 }
 
 input[type="submit"] {
@@ -222,7 +220,7 @@ input[type="submit"] {
   font-size: large;
   cursor: pointer;
 }
- 
+
 input[type="submit"]:hover {
   background-color: rgb(70, 70, 170);
 }
@@ -306,7 +304,7 @@ a.rm-link:hover {
 }
 
 .notice {
-  background-color: #3CB371;
+  background-color: #3cb371;
 }
 
 .alert {
