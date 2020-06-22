@@ -46,20 +46,36 @@ Private Events allows users to create events and invite other users to their eve
 <hr />
 
 ## Application Screen Shots  
-
+## Sign Up
 <img src="app/assets/images/sign-up.png" alt="program interface">
 <hr />
+
+## Log In
 <img src="app/assets/images/sign-in.png" alt="program interface">
 <hr />
+
+## Users List
 <img src="app/assets/images/users.png" alt="program interface">
 <hr />
+
+## User show
 <img src="app/assets/images/user.png" alt="program interface">
 <hr />
+
+## New event
 <img src="app/assets/images/event-new.png" alt="program interface">
 <hr />
+
+## Events List
 <img src="app/assets/images/events.png" alt="program interface">
 <hr />
+
+## Event show of non-creator
 <img src="app/assets/images/event.png" alt="program interface">
+<hr />
+
+## Event show of creator
+<img src="app/assets/images/event-creator.png" alt="program interface">
 <hr />
 <!-- TABLE OF CONTENTS -->
 
@@ -80,19 +96,31 @@ Private Events allows users to create events and invite other users to their eve
 
 ## About The Project  
 
-  The project creates a database which holds 2 tables:  
-    - Users : Is the table containing the users' data
-      - Fields : string: name, datetime: created_at, datetime: update_at  
+  The project creates a database which holds 3 tables:  
+    - Users : Is the table containing the users' data  
+      - Fields :  
+        - string: name  
+        - datetime: created_at  
+        - datetime: update_at  
     
-    - Events : is the table containing the events' data
-      - Fields: text: description, string: location, datetime: event_date, integer: user_id, datetime: created_at, datetime: update_at  
-      - user_id is the id of the creator user
+    - Events : is the table containing the events' data  
+      - Fields:  
+        - text: description  
+        - string: location  
+        - datetime: event_date  
+        - integer: user_id  
+        - datetime: created_at  
+        - datetime: update_at  
 
-    - Events_Users : is the Join Table that contains the users' events attendance
-      - Fields : integer: use_id, integer: event_id
+      - user_id is the id of the creator user  
+
+    - Events_Users : is the Join Table that contains the users' events attendance  
+      - Fields :  
+        - integer: use_id  
+        - integer: event_id  
 
   Constraints for tables are as follows:  
-  - Users Table
+  - Users Table  
     - name: required  
 
   - Events Table
@@ -100,7 +128,7 @@ Private Events allows users to create events and invite other users to their eve
     - location: required  
     - event_date : required  
 
-  We added our styling choices editing the application.scss file
+  We added our styling choices editing the application.css file
 
 <hr/>
 
@@ -111,11 +139,11 @@ Private Events allows users to create events and invite other users to their eve
   - New users must sign up and give a name, else only can access events' index  
   - Using just their name they can log in  
   - A logged in user can create events and invite other users to attend those events
-  - Invitations or removals can be applyed from the event's show page by clicking 
+  - Invitations or removals can be applied from the event's show page by clicking 
     - 'Invite' in the 'Select Attendees' list, or   
-    - remove invitation by clicking 'Remove' at the 'Attendees' list.  
+    - remove invitation by clicking 'Remove' at the 'Attendees' list  
   - An event requires a description, a location and an event date  
-  - They also can register to attend other's users' events  
+  - Users also can register to attend other's users' events  
   - Users can edit or delete their own created events and their own account  
 
 <hr/>
@@ -124,10 +152,13 @@ Private Events allows users to create events and invite other users to their eve
   - Ruby  
   - Rails  
   - Yarn  
-  - RSpec gem  
-  - Capybara gem   
+  - RSpec   
 
 ## Dependencies
+  - rspec-rails gem  
+  - capybara gem 
+  - selenium-webdriver gem 
+  - chromedriver-helper gem
 
 ## Configuration
   - first, clone the project 
@@ -154,10 +185,10 @@ Private Events allows users to create events and invite other users to their eve
 <hr/>
 
 ## Testing
-  - Test have been included using RSpec for controllers and models  
+  - Tests have been included using RSpec for controllers, views and models  
   - Location /spec/  
   - 6 test files  
-    - main_menu_spec.rb   
+    - main_menu_spec.rb  
       Tests the functionality of the application's menu bar buttons  
     - controllers/events_controller_spec.rb  
       Tests the actions of the events controller  
@@ -169,18 +200,19 @@ Private Events allows users to create events and invite other users to their eve
       Tests the functionallity of event model  
     - models/user_spec.rb  
       Tests the functionality of user model  
+  
+  ### Controller test files implement the views tests as well.
 
-    
 <hr/>
 
 ## Built With
 
-This project was built using these technologies.
+This project was built using these technologies.  
 
-  - Ruby version 2.6
-  - Ruby On Rails version 6.0
-  - rspec
-  - capybara
+  - Ruby version 2.6  
+  - Ruby On Rails version 6.0  
+  - rspec  
+  - capybara  
 
 <hr/>
 
