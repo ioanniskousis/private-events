@@ -1,0 +1,84 @@
+<!-- <% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %> -->
+
+<div class="user-strip">
+  <span class="top-label"><%= 'About ' + @user.name  %></span>
+  <% if @user.id == session[:user_id] %>
+    <%= link_to 'Edit', edit_user_path(@user), class: "menu-button float-right" %>
+  <% end %>
+  <% if @user.id = session[:user_id] %>
+    <%= link_to "Destroy", user_path(@user.id), method: :delete, class: "menu-button float-right", data: { confirm: "Are you sure you want to delete your account?"} %>
+  <% end %>
+</div>
+
+<table class="w_100 margin-bottom-20">
+  <thead>
+    <tr>
+      <th class="w300 list-header">Created Events</th>
+      <th class="w200 list-header">Date</th>
+      <th class="w200 list-header">Location</th>
+      <th class="w100 list-header">Attendees</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @created_events.each do |e| %>
+    <tr>
+    <td class="td-link"><%= link_to e.description, event_path(e), class: "tb-link" %></td>
+    <td><%= e.event_date.strftime("%A %B %d, %Y") %></td>
+    <td><%= e.location %></td>
+    <td><%= e.attendees.count %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<% if @user.events.count.zero? %>
+  <p class="brown"><%= @user.name %> has not created any events</p>
+<% end  %>
+
+<table class="w_100 margin-bottom-20">
+  <thead>
+    <tr>
+      <th class="w300 list-header">Events To Attend</th>
+      <th class="w200 list-header">Date</th>
+      <th class="w200 list-header">Location</th>
+      <th class="w200 list-header">Creator</th>
+      <th class="w100 list-header">Attendees</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @upcoming_events.each do |e| %>
+    <tr>
+    <td class="td-link"><%= link_to e.description, event_path(e), class: "tb-link"  %></td>
+    <td class="td-link-inactive"><%= e.event_date.strftime("%A %B %d, %Y") %></td>
+    <td class="td-link-inactive"><%= e.location %></td>
+    <td class="td-link"><%= link_to e.creator.name, user_path(e.creator.id), class: "tb-link"  %></td>
+    <td class="td-link-inactive"><%= e.attendees.count %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<table class="w_100 margin-bottom-20">
+  <thead>
+    <tr>
+      <th class="w300 list-header">Attended Events</th>
+      <th class="w200 list-header">Date</th>
+      <th class="w200 list-header">Location</th>
+      <th class="w200 list-header">Creator</th>
+      <th class="w100 list-header">Attendees</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @previous_events.each do |e| %>
+    <tr>
+    <td class="td-link"><%= link_to e.description, event_path(e), class: "tb-link"  %></td>
+    <td class="td-link-inactive"><%= e.event_date.strftime("%A %B %d, %Y") %></td>
+    <td class="td-link-inactive"><%= e.location %></td>
+    <td class="td-link"><%= link_to e.creator.name, user_path(e.creator.id), class: "tb-link"  %></td>
+    <td class="td-link-inactive"><%= e.attendees.count %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

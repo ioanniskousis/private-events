@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PrivateEvents</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if notice %>
+      <p class="flash notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="flash alert"><%= alert %></p>
+    <% end %>
+
+    <div class="container">
+      <div class="menu-bar">
+        <% if session[:user_id] %>
+          <%= link_to 'Back', :back, class: "menu-button" %>
+          <%= link_to "Users", users_path, class: "menu-button" %>
+          <%= link_to "Events", events_path, class: "menu-button" %>
+          <%= link_to 'New Event', new_event_path, class: "menu-button" %>
+          <%= link_to User.find(session[:user_id]).name, user_path(session[:user_id]), class: "menu-button float-right" %>
+          <%= link_to "Log Out", session_path(0), method: :delete, class: "menu-button float-right" %>
+        <% else %>
+          <%= link_to "Home", events_path, class: "menu-button" %>
+          <%= link_to "Sign Up", new_user_path, class: "menu-button" %>
+          <%= link_to "Log In", new_session_path, class: "menu-button" %>
+        <% end %>
+      </div>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>
