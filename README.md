@@ -45,36 +45,45 @@ Private Events allows users to create events and invite other users to their eve
 
 <hr />
 
-## Application Screen Shots  
+## Application Screen Shots
+
 ## Sign Up
+
 <img src="app/assets/images/sign-up.png" alt="program interface">
 <hr />
 
 ## Log In
+
 <img src="app/assets/images/sign-in.png" alt="program interface">
 <hr />
 
 ## Users List
+
 <img src="app/assets/images/users.png" alt="program interface">
 <hr />
 
 ## User show
+
 <img src="app/assets/images/user.png" alt="program interface">
 <hr />
 
 ## New event
+
 <img src="app/assets/images/event-new.png" alt="program interface">
 <hr />
 
 ## Events List
+
 <img src="app/assets/images/events.png" alt="program interface">
 <hr />
 
 ## Event show of non-creator
+
 <img src="app/assets/images/event.png" alt="program interface">
 <hr />
 
 ## Event show of creator
+
 <img src="app/assets/images/event-creator.png" alt="program interface">
 <hr />
 <!-- TABLE OF CONTENTS -->
@@ -94,125 +103,137 @@ Private Events allows users to create events and invite other users to their eve
 
 <!-- ABOUT THE PROJECT -->
 
-## About The Project  
+## About The Project
 
-  The project creates a database which holds 3 tables:  
-    - Users : Is the table containing the users' data  
-      - Fields :  
-        - string: name  
-        - datetime: created_at  
-        - datetime: update_at  
-    
-    - Events : is the table containing the events' data  
-      - Fields:  
-        - text: description  
-        - string: location  
-        - datetime: event_date  
-        - integer: user_id  
-        - datetime: created_at  
-        - datetime: update_at  
+The project creates a database which holds 3 tables:
 
-      - user_id is the id of the creator user  
+    - Users : Is the table containing the users' data
+      - Fields :
+        - string: name
+        - datetime: created_at
+        - datetime: update_at
 
-    - Events_Users : is the Join Table that contains the users' events attendance  
-      - Fields :  
-        - integer: use_id  
-        - integer: event_id  
+    - Events : is the table containing the events' data
+      - Fields:
+        - text: description
+        - string: location
+        - datetime: event_date
+        - integer: user_id
+        - datetime: created_at
+        - datetime: update_at
 
-  Constraints for tables are as follows:  
-  - Users Table  
-    - name: required  
+      - user_id is the id of the creator user
 
-  - Events Table
-    - description: required  
-    - location: required  
-    - event_date : required  
+    - Events_Users : is the Join Table that contains the users' events attendance
+      - Fields :
+        - integer: use_id
+        - integer: event_id
 
-  We added our styling choices editing the application.css file
+Constraints for tables are as follows:
+
+- Users Table
+
+  - name: required
+
+- Events Table
+  - description: required
+  - location: required
+  - event_date : required
+
+We added our styling choices editing the application.css file
 
 <hr/>
 
 <!-- ABOUT THE PROJECT -->
 
-## Application Instructions  
+## Application Instructions
 
-  - New users must sign up and give a name, else only can access events' index  
-  - Using just their name they can log in  
-  - A logged in user can create events and invite other users to attend those events
-  - Invitations or removals can be applied from the event's show page by clicking 
-    - 'Invite' in the 'Select Attendees' list, or   
-    - remove invitation by clicking 'Remove' at the 'Attendees' list  
-  - An event requires a description, a location and an event date  
-  - Users also can register to attend other's users' events  
-  - Users can edit or delete their own created events and their own account  
+- New users must sign up and give a name, else only can access events' index
+- Using just their name they can log in
+- A logged in user can create events and invite other users to attend those events
+- Invitations or removals can be applied from the event's show page by clicking
+  - 'Invite' in the 'Select Attendees' list, or
+  - remove invitation by clicking 'Remove' at the 'Attendees' list
+- An event requires a description, a location and an event date
+- Users also can register to attend other's users' events
+- Users can edit or delete their own created events and their own account
 
 <hr/>
 
 ## System Requierments
-  - Ruby  
-  - Rails  
-  - Yarn  
-  - RSpec   
+
+- Ruby
+- Rails
+- Yarn
+- RSpec
 
 ## Dependencies
-  - rspec-rails gem  
-  - capybara gem 
-  - selenium-webdriver gem 
-  - chromedriver-helper gem
+
+- rspec-rails gem
+- capybara gem
+- selenium-webdriver gem
+- chromedriver-helper gem
 
 ## Configuration
-  - first, clone the project 
-  Run 
-  ```
-    git clone https://github.com/ioanniskousis/private-events.git
-  ```
 
-  - Install the necessary dependancies 
-  Run 
-  ```
-    bundle install
-    rails generate rspec:install
-    yarn install
-  ```
+- first, clone the project
+  Run
+
+```
+  git clone https://github.com/ioanniskousis/private-events.git
+```
+
+- Install the necessary dependancies
+  Run
+
+```
+  bundle install
+  rails generate rspec:install
+  yarn install
+```
 
 <hr/>
 
 ## Development
-  * Clone the project
-  ```
-    https://github.com/ioanniskousis/private-events.git
-  ``` 
+
+- Clone the project
+
+```
+  https://github.com/ioanniskousis/private-events.git
+```
+
 <hr/>
 
 ## Testing
-  - Tests have been included using RSpec for controllers, views and models  
-  - Location /spec/  
-  - 6 test files  
-    - main_menu_spec.rb  
-      Tests the functionality of the application's menu bar buttons  
-    - controllers/events_controller_spec.rb  
-      Tests the actions of the events controller  
-    - controllers/session_controller_spec.rb  
-      Tests the actions of loging in ang logging out  
-    - controllers/user_controller_spec.rb  
-      Tests the actions of users controller  
-    - models/event_spec.rb  
-      Tests the functionallity of event model  
-    - models/user_spec.rb  
-      Tests the functionality of user model  
-  
-  ### Controller test files implement the views tests as well.
+
+- Tests have been included using RSpec for controllers, views and models
+- Location /spec/
+- 6 test files
+  - main_menu_spec.rb  
+    Tests the functionality of the application's menu bar buttons
+  - controllers/events_controller_spec.rb  
+    Tests the actions of the events controller
+  - controllers/session_controller_spec.rb  
+    Tests the actions of loging in ang logging out
+  - controllers/user_controller_spec.rb  
+    Tests the actions of users controller
+  - models/event_spec.rb  
+    Tests the functionallity of event model
+  - models/user_spec.rb  
+    Tests the functionality of user model
+
+### Controller test files implement the views tests as well.
 
 <hr/>
 
 ## Built With
 
-This project was built using these technologies.  
+This project was built using these technologies.
 
-  - Ruby version 2.6  
-  - Ruby On Rails version 6.0  
-  - rspec  
-  - capybara  
+- Ruby version 2.6
+- Ruby On Rails version 6.0
+- rspec
+- capybara
 
 <hr/>
 
@@ -222,6 +243,7 @@ This project was built using these technologies.
 
 :bust_in_silhouette: **Author_1**
 ​
+
 ## Ioannis Kousis
 
 - Github: [@ioanniskousis](https://github.com/ioanniskousis)
@@ -243,9 +265,9 @@ This project was built using these technologies.
 
 ## Acknowledgements
 
-  - [Microverse](https://www.microverse.org/)
-  - [The Odin Project](https://www.theodinproject.com/)
-  - [Ruby Documentation](https://www.ruby-lang.org/en/documentation/)
+- [Microverse](https://www.microverse.org/)
+- [The Odin Project](https://www.theodinproject.com/)
+- [Ruby Documentation](https://www.ruby-lang.org/en/documentation/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
