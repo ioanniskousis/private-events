@@ -1,0 +1,27 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<div class="user-strip">
+  <span class="top-label">Users</span>
+</div>
+<table class="w_100">
+  <thead>
+    <tr>
+      <th class="list-header">User Name</th>
+      <th class="list-header">Events Created</th>
+      <th class="list-header">Events To Attend</th>
+      <th class="list-header">Events Attended</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td class="td-link w_55"><%= link_to user.name, user_path(user.id), class: "tb-link" %></td>
+        <td class="td-link-inactive w_15"><%= user.events.count %></td>
+        <td class="td-link-inactive w_15"><%= user.upcoming_events.count %></td>
+        <td class="td-link-inactive w_15"><%= user.previous_events.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

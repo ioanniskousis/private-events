@@ -1,0 +1,59 @@
+<div class="user-strip">
+  <span class="top-label">Upcoming Events</span>
+</div>
+<table class="w_100 margin-bottom-20">
+  <thead>
+    <tr>
+      <th class="w300 list-header">Description</th>
+      <th class="w300 list-header">Date</th>
+      <th class="w300 list-header">Location</th>
+      <th class="w200 list-header">Creator</th>
+      <th class="w100 list-header">Attendees</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @upcoming_events.count.zero? %>
+      <td colspan="4">There are no upcoming events recorded</td>
+    <% end %>
+    <% @upcoming_events.each do |event| %>
+      <tr>
+        <td class="td-link"><%= link_to event.description, event_path(event.id), class: "tb-link"  %></td>
+        <td class="td-link-inactive"><%= event.event_date.strftime("%A %B %d, %Y") %></td>
+        <td class="td-link-inactive"><%= event.location  %></td>
+        <td class="td-link"><%= link_to event.creator.name, user_path(event.creator.id), class: "tb-link"  %></td>
+        <td class="td-link"><%= link_to event.attendees.count, event_path(event.id), class: "tb-link"  %></td>
+      </tr>
+    <% end %> 
+  </tbody>
+</table>
+
+<div class="user-strip">
+  <span class="top-label">Past Events</span>
+</div>
+<table class="w_100 margin-bottom-20">
+  <thead>
+    <tr>
+      <th class="w300 list-header">Description</th>
+      <th class="w300 list-header">Date</th>
+      <th class="w300 list-header">Location</th>
+      <th class="w200 list-header">Creator</th>
+      <th class="w100 list-header">Attendees</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if @previous_events.count.zero? %>
+      <td colspan="4">There are no previous events recorded</td>
+    <% end %>
+    <% @previous_events.each do |event| %>
+      <tr>
+        <td class="td-link"><%= link_to event.description, event_path(event.id), class: "tb-link"  %></td>
+        <td class="td-link-inactive"><%= event.event_date.strftime("%A %B %d, %Y") %></td>
+        <td class="td-link-inactive"><%= event.location  %></td>
+        <td class="td-link"><%= link_to event.creator.name, user_path(event.creator.id), class: "tb-link"  %></td>
+        <td class="td-link"><%= link_to event.attendees.count, event_path(event.id), class: "tb-link"  %></td>
+      </tr>
+    <% end %> 
+  </tbody>
+</table>

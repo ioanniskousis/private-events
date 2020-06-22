@@ -1,0 +1,321 @@
+body,
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 10px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+form,
+h1 {
+  clear: both;
+}
+
+div {
+  margin: 0;
+}
+
+.d100 {
+  width: 100%;
+  box-sizing: border-box;
+  clear: both;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+.menu-button {
+  display: inline-block;
+  border: none;
+  background-color: rgb(139, 139, 184);
+  text-decoration: none;
+  color: white;
+  padding: 12px;
+  width: 120px;
+  text-align: center;
+  font-size: large;
+}
+
+.sub-menu-button {
+  display: inline-block;
+  border: none;
+  background-color: rgb(139, 139, 184);
+  text-decoration: none;
+  color: white;
+  padding: 4px;
+  width: 120px;
+  text-align: center;
+  font-size: large;
+}
+
+.menu-bar {
+  padding: 4px 0;
+}
+
+a.menu-button:visited {
+  color: white;
+}
+
+.menu-button:hover,
+.sub-menu-button:hover {
+  background-color: rgb(70, 70, 170);
+}
+
+.float-right {
+  float: right;
+  margin-left: 8px;
+}
+
+.user-strip {
+  box-sizing: border-box;
+  display: block;
+  background-color: rgb(3, 3, 83);
+  color: white;
+  margin: 10px 0;
+}
+
+.top-label {
+  display: inline-block;
+  margin: 9px 20px;
+  font-size: x-large;
+}
+
+.center-div {
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 60px;
+  background-color: #ddd;
+  padding: 60px;
+  border-radius: 6px;
+}
+
+label {
+  font-size: medium;
+  margin: 10px 0;
+}
+
+.center-div label {
+  margin: 20px 0;
+  font-size: large;
+}
+
+.margin-left {
+  margin-left: 30px;
+}
+
+.gray {
+  color: #bbb;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 4px 10px;
+  border: 1px solid #555;
+}
+
+.w100 {
+  width: 100px;
+  max-width: 100px;
+}
+
+.w200 {
+  width: 200px;
+}
+
+.w300 {
+  width: 300px;
+}
+
+.w272 {
+  width: 272px;
+}
+
+.brown {
+  color: brown;
+}
+
+.blue {
+  color: blue;
+}
+
+.invite {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+a:visited {
+  color: -moz-hyperlinktext;
+}
+
+.center {
+  text-align: center;
+}
+
+.td-link {
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid #aaa;
+}
+
+.td-link-inactive {
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #aaa;
+}
+
+th.list-header {
+  padding: 10px;
+  background-color: rgb(70, 70, 170);
+  color: white;
+  text-align: center;
+}
+
+a.tb-link {
+  display: block;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
+
+a.tb-link:hover {
+  background-color: rgb(70, 70, 170);
+  color: white;
+}
+
+input[type="text"],
+input[type="date"] {
+  font-size: medium;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+}
+
+input[type="submit"] {
+  display: inline-block;
+  border: none;
+  background-color: rgb(139, 139, 184);
+  text-decoration: none;
+  color: white;
+  padding: 12px;
+  width: 120px;
+  text-align: center;
+  font-size: large;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: rgb(70, 70, 170);
+}
+
+.w_100 {
+  width: 100%;
+}
+
+.w_55 {
+  width: 55%;
+}
+
+.w_15 {
+  width: 15%;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.center-div input {
+  margin: 10px 0;
+  font-size: large;
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+}
+
+.bg_green {
+  background-color: rgb(90, 121, 90);
+}
+
+.bg_green:hover {
+  background-color: rgb(111, 170, 111);
+}
+
+.bg_red {
+  background-color: #ff1a4d;
+}
+
+.bg_red:hover {
+  background-color: #d35c76;
+}
+
+.p-10 {
+  padding: 10px;
+  text-align: center;
+}
+
+a.rm-link {
+  display: block;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
+
+a.rm-link:hover {
+  background-color: #ff1a4d;
+  color: white;
+}
+
+.flash {
+  margin: 0;
+  padding: 5px;
+  position: relative;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  color: #eee;
+  animation: flashy 2s ease;
+}
+
+@keyframes flashy {
+  50% {
+    opacity: 0;
+  }
+}
+
+.notice {
+  background-color: #3cb371;
+}
+
+.alert {
+  background-color: #ff1a4d;
+}
+
+* {
+  border-radius: 4px;
+}
+
+.event {
+  color: rgb(198, 153, 204);
+  font-weight: bold;
+}
