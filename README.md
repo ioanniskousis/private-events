@@ -91,6 +91,7 @@ Private Events allows users to create events and invite other users to their eve
 ## Table of Contents
 
 - [About the Project](#about-the-project)
+- [Future Features](#future-features)
 - [Application Instructions](#application-instructions)
 - [System Requierments](#system-requierments)
 - [Dependencies](#dependencies)
