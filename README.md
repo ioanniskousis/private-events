@@ -144,6 +144,13 @@ We added our styling choices editing the application.css file
 
 <hr/>
 
+## Future Features
+  ### Following version may include
+  - Creators of the each event may add images and other media, so users may have a taste of what to expect before the event 
+  - Attendees may add comments and media on each event, so they can feed-back their experience
+  
+<hr/>
+
 <!-- ABOUT THE PROJECT -->
 
 ## Application Instructions
