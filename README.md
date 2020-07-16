@@ -159,7 +159,7 @@ We added our styling choices editing the application.css file
 
 ## Application Instructions
 
-- New users must sign up and give a name, else only can access events' index
+- New users must sign up and give a name, otherwise they can only access the events index
 - Using just their name they can log in
 - A logged in user can create events and invite other users to attend those events
 - Invitations or removals can be applied from the event's show page by clicking
@@ -171,7 +171,7 @@ We added our styling choices editing the application.css file
 
 <hr/>
 
-## System Requierments
+## System Requirerments
 
 - Ruby
 - Rails
@@ -253,7 +253,6 @@ This project was built using these technologies.
 ## Contributors
 
 :bust_in_silhouette: **Author_1**
-​
 
 ## Ioannis Kousis
 
@@ -264,7 +263,7 @@ This project was built using these technologies.
 
 :bust_in_silhouette: **Author_2**
 
-​## Eric Mbouwe
+## Eric Mbouwe
 
 - Github: [@ericmbouwe](https://github.com/ericmbouwe)
 - Twitter: [@ericmbouwe](https://twitter.com/ericmbouwe)
