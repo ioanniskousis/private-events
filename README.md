@@ -44,6 +44,23 @@
 Private Events allows users to create events and invite other users to their events.
 
 <hr />
+<!-- TABLE OF CONTENTS -->
+
+## Table of Contents
+- [Application Screen Shots](#application-screen-shots)
+- [About the Project](#about-the-project)
+- [Future Features](#future-features)
+- [Application Instructions](#application-instructions)
+- [System Requierments](#system-requierments)
+- [Dependencies](#dependencies)
+- [Configuration](#configuration)
+- [Development](#development)
+- [Testing](#testing)
+- [Built With](#built-with)
+- [Contributors](#contributors)
+- [Acknowledgements](#acknowledgements)
+
+<hr />
 
 ## Application Screen Shots
 
@@ -85,22 +102,8 @@ Private Events allows users to create events and invite other users to their eve
 ## Event show of creator
 
 <img src="app/assets/images/event-creator.png" alt="program interface">
+
 <hr />
-<!-- TABLE OF CONTENTS -->
-
-## Table of Contents
-
-- [About the Project](#about-the-project)
-- [Future Features](#future-features)
-- [Application Instructions](#application-instructions)
-- [System Requierments](#system-requierments)
-- [Dependencies](#dependencies)
-- [Configuration](#configuration)
-- [Development](#development)
-- [Testing](#testing)
-- [Built With](#built-with)
-- [Contributors](#contributors)
-- [Acknowledgements](#acknowledgements)
 
 <!-- ABOUT THE PROJECT -->
 
